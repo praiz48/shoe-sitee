@@ -267,7 +267,7 @@ main {
 
 /* For mobile */
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .hide-desktop {
     display: block;
   }
