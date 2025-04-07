@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>E-commerce product page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="left-side">
+        <!-- menu logo -->
+
+        <!-- logo -->
+        <div class="logo">
+          <div class="hide-desktop">
+            <a href="#" onclick="Showmenu()" class="open-opt">
+              <img src="/images/icon-menu.svg" alt="menu icon" />
+            </a>
+          </div>
+          <img src="/images/logo.svg" alt="Snicker logo" />
+        </div>
+        <nav class="main-options">
+          <ul>
+            <div class="hide-desktop">
+              <a href="#" onclick="Showmenu()" class="close-opt">
+                <img src="/images/icon-close.svg" alt="close icon" />
+              </a>
+            </div>
+
+            <li>
+              <a href="#"> collections </a>
+            </li>
+            <li>
+              <a href="#"> Men </a>
+            </li>
+            <li>
+              <a href="#"> Women </a>
+            </li>
+            <li>
+              <a href="#"> about </a>
+            </li>
+            <li>
+              <a href="#"> contact </a>
+            </li>
+          </ul>
+          <div></div>
+        </nav>
+      </div>
+      <!-- right side of header -->
+      <div class="right-side">
+        <a href="#" onclick="toggleCart()">
+          <img src="/images/icon-cart.svg" alt="shopcart" />
+        </a>
+        <img
+          class="profile-img"
+          src="/images/image-avatar.png"
+          alt="avatar image"
+          width="40px"
+          height="40px"
+        />
+      </div>
+      <!-- cart pane section -->
+      <div class="cart-pane">
+        <h2>Cart</h2>
+        <hr />
+        <!-- if cart is full -->
+        <div class="cart-item">
+          <div class="item">
+            <span>
+              <img
+                src="/images/image-product-1-thumbnail.jpg"
+                alt="product1"
+                width="50px"
+                height="50px"
+              />
+              <p>
+                Fall limited Edition sneakers <br />
+                $125.00x3
+                <strong>$375.00</strong>
+              </p>
+              <a href="#" onclick="cart_empty(true)">
+                <img src="/images/icon-delete.svg" alt="icon-delete" />
+              </a>
+            </span>
+            <button>Checkout</button>
+          </div>
+        </div>
+        <!-- if cart is empty -->
+        <div class="empty">
+          <h3>your cart is empty</h3>
+        </div>
+      </div>
+    </header>
+    <hr />
+    <main>
+      <!-- the place with all the images -->
+      <div class="img-section">
+        <div class="hero">
+          <img
+            src="/images/image-product-1.jpg"
+            alt="product1"
+            width="500px"
+            height="400px"
+          />
+        </div>
+        <!-- shoe display options area -->
+        <ul>
+          <li onclick="displayOuter(false)">
+            <img
+              src="/images/image-product-1-thumbnail.jpg"
+              alt="product1 thumbnail"
+              width="100px"
+              height="100px"
+            />
+          </li>
+          <li>
+            <img
+              src="/images/image-product-2-thumbnail.jpg"
+              alt="product2 thumbnail"
+              width="100px"
+              height="100px"
+            />
+          </li>
+          <li>
+            <img
+              src="/images/image-product-3-thumbnail.jpg"
+              alt="product3 thumbnail"
+              width="100px"
+              height="100px"
+            />
+          </li>
+          <li>
+            <img
+              src="/images/image-product-4-thumbnail.jpg"
+              alt="product4 thumbnail"
+              width="100px"
+              height="100px"
+            />
+          </li>
+        </ul>
+      </div>
+      <!-- the slider disappearing for desktop and main for mobile -->
+      <div class="outer-slider">
+        <div class="inner-slider">
+          <a href="#" onclick="displayOuter(true)">
+            <img src="/images/icon-close.svg" alt="close" />
+          </a>
+          <div class="slides">
+            <img
+              src="//images/image-product-1.jpg"
+              alt="product1"
+              width="500px"
+              height="300px"
+            />
+            <img
+              src="//images/image-product-2.jpg"
+              alt="product2"
+              width="500px"
+              height="300px"
+            />
+            <img
+              src="//images/image-product-3.jpg"
+              alt="product3"
+              width="500px"
+              height="300px"
+            />
+            <img
+              src="//images/image-product-4.jpg"
+              alt="product4"
+              width="500px"
+              height="300px"
+            />
+          </div>
+          <button class="next" onclick="nextSlide()">
+            <img src="/images/icon-next.svg" alt="next icon" class="display" />
+          </button>
+          <button class="prev" onclick="prevSlide()">
+            <img src="/images/icon-previous.svg" alt="previous icon" />
+          </button>
+          <div class="slide-icon">
+            <ul class="slide-img">
+              <li class="s-icon">
+                <img
+                  src="/images/image-product-1-thumbnail.jpg"
+                  alt="product1"
+                  width="100px"
+                  height="100px"
+                />
+              </li>
+              <li class="s-icon">
+                <img
+                  src="/images/image-product-2-thumbnail.jpg"
+                  alt="product2"
+                  width="100px"
+                  height="100px"
+                />
+              </li>
+              <li class="s-icon">
+                <img
+                  src="/images/image-product-3-thumbnail.jpg"
+                  alt="product3"
+                  width="100px"
+                  height="100px"
+                />
+              </li>
+              <li class="s-icon">
+                <img
+                  src="/images/image-product-4-thumbnail.jpg"
+                  alt="product4"
+                  width="100px"
+                  height="100px"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- text stuff  -->
+      <div class="txt-area">
+        <h2>sneaker company</h2>
+        <h1>
+          Fall Limited Edition <br />
+          Sneaker
+        </h1>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion
+          Featuring a durable rubber outer side, they'll withstand everything
+          the weather can offer
+        </p>
+        <!-- price section  -->
+        <div class="pricing">
+          <div>
+            <h2>$125.00</h2>
+            <span>50%</span>
+          </div>
+          <p>$250.00</p>
+        </div>
+        <!-- buying section -->
+        <div class="buying">
+          <div>
+            <a href="#" onclick="counting(false)">
+              <img src="/images/icon-minus.svg" alt="minus icon" />
+            </a>
+            <span id="counter">0</span>
+            <a href="#" onclick="counting(true)">
+              <img src="/images/icon-plus.svg" alt="plus icon" />
+            </a>
+          </div>
+
+          <button onclick="cart_empty(false)">
+            <img src="/images/icon-cart.svg" alt="cart icon" />
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </main>
+    <script src="/index.js"></script>
+  </body>
+</html>
