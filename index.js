@@ -9,10 +9,12 @@ const empty_cart = document.querySelector(".empty");
 const item_cart = document.querySelector(".item");
 const mediaQuery = window.matchMedia("(max-width:500px)");
 const thumbnails = document.querySelectorAll(".thumbnail-item");
+const hero_img = document.querySelector(".hero img");
 let count = 0;
 let slideindex = 0;
 let slide_open = false;
 let mobile = false;
+
 function toggleCart() {
   cart_btn.classList.toggle("blank");
 }
@@ -69,19 +71,13 @@ document.addEventListener("keydown", function (event) {
     displayOuter(true);
   }
 });
-thumbnails.forEach((thumb) => {
+thumbnails.forEach((thumb, indexx) => {
   thumb.addEventListener("click", function () {
-    // Remove active class from all thumbnails
     thumbnails.forEach((t) => t.classList.remove("activate"));
 
-    // Add active class to clicked thumbnail
     this.classList.add("activate");
-
-    // Call your existing function
+    hero_img.src = `/images/image-product-${indexx + 1}.jpg`;
     displayOuter(false);
-
-    // Optional: You could also pass which thumbnail was clicked
-    // displayOuter(false, this.dataset.index);
   });
 });
 function displayOuter(disp) {
